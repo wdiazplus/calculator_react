@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import './Calculator';
 
-const Input = () => {
+const Input = ({hardname}) => {
   return (
     <div className="input">
-      <input type="text" readOnly />
+      <span name={hardname}   type="text" readOnly />
     </div>
   );
 };
 
 export default Input;
+
+Input.propTypes = {
+  hardname: PropTypes.string.isRequired,
+};
