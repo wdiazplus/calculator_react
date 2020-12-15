@@ -1,0 +1,15 @@
+.primary{
+    width: 60px;
+    height: 40px;
+    background-color: #001A23;
+    color: #E8F1F2;
+    border-radius: 10px;
+}
+.secondary{
+    width: 60px;
+    height: 40px;
+    background-color: #FFC15E;
+    color: #001A23;
+    border-radius: 10px;
+    
+}
