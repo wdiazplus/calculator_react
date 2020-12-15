@@ -1,36 +1,54 @@
-import React,{ Component } from 'react';
-import './Calculator.css';
+import React, { Component } from 'react';
+import './css/Calculator.css';
+import './css/Button.css';
+import './css/Input.css';
+import './css/Output.css';
+import './css/Title.css';
+import Title from './Title';
+import Button from './Button';
+import Input from './Input';
+import Output from './Output';
 
 class Calculator extends Component {
   render() {
     return (
       <div className="container">
-        <h3 className="title">Enconta Calculator</h3>
-        <h1 className="display">5+5+</h1>
-        <div className="result">
-          <h2 className="result__equal">=</h2>
-          <h1 className="result__answer">10</h1>
+        <div className="container__title">
+          <Title NameTitle="Enconta Calculator" />
+        </div>
+        <div className="screen">
+          <div className="screen__input">
+            <Input />
+          </div>  
+          <div className="screen__output">
+            <h2 className="screen__result--equal">=</h2>
+            <Output />
+          </div>
         </div>
         <div className="buttons">
-          <input type="button" onClick="state" value="+" />
-          <input type="button" onClick="state" value="-" />
-          <input type="button" onClick="state" value="X" />
-          <input type="button" onClick="state" value="/" />
-          <input type="button" onClick="state" value="7" />
-          <input type="button" onClick="state" value="8" />
-          <input type="button" onClick="state" value="9" />
-          <input type="button" onClick="state" value="AC" />
-          <input type="button" onClick="state" value="4" />
-          <input type="button" onClick="state" value="5" />
-          <input type="button" onClick="state" value="6" />
-          <input type="button" onClick="state" value="=" />
-          <input type="button" onClick="state" value="1" />
-          <input type="button" onClick="state" value="2" />
-          <input type="button" onClick="state" value="3" />
-          <input type="button" onClick="state" value="0" />
-          <input type="button" onClick="state" value="." />
-          <input type="button" onClick="state" value="DEL" />
-        </div>
+          <div className="buttons__left">
+            <Button  name="+" />  
+            <Button  name="-" />  
+            <Button  name="x" />  
+            <Button  name="7" />  
+            <Button  name="8" />  
+            <Button  name="9" />  
+            <Button  name="4" />  
+            <Button  name="5" />  
+            <Button  name="6" />  
+            <Button  name="1" />  
+            <Button  name="2" />  
+            <Button  name="3" />  
+            <Button  name="0" />  
+            <Button  name="." />  
+            <Button  name="DEL" />  
+          </div>
+          <div className="buttons__right">
+            <Button  name="/" />  
+            <Button  name="AC" />  
+            <Button  name="=" /> 
+          </div>
+        </div>  
       </div>
     );
   }
