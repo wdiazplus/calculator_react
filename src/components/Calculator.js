@@ -79,7 +79,7 @@ render(){
         </div>
         <div className="buttons__right">
           <Button  clic={this.addValue("/")}  typeButton="primary" name="/" />
-          <Button  clic={this.clean}  typeButton="secondary" name="AC" />
+          <Button  clic={this.clean}  typeButton="secondary" name="C" />
           <Button  clic={this.result}  typeButton="equal" name="=" />
         </div>
       </div>
