@@ -14,26 +14,28 @@
 
 .screen{
     height: 310px;
+    justify-content: space-around;
+    align-content: center;
 }
 
-/* .screen__input{
+.screen__input{
     height: 130px;
-    border: 2px blueviolet solid;
 }
 
 .screen__output{
     width: 100%;
     height: 170px;
     display: flex;
-    border: chartreuse 2px solid;
 
 }
 
 .screen__result--equal{
     padding-left: 30px;
-    font-size: 30px;
-    background-color: crimson;
-} */
+    font-size: 60px;
+    text-align: center;
+    color: #FFC15E;
+
+}
 
 .buttons{
     background-color: #1B2A2A;    

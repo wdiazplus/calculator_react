@@ -10,6 +10,12 @@ import Input from './Input';
 import Output from './Output';
 
 class Calculator extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { inputValue: '' , outputValue: '0' };
+  }
+
   render() {
     return (
       <div className="container">
@@ -18,37 +24,37 @@ class Calculator extends Component {
         </div>
         <div className="screen">
           <div className="screen__input">
-            <Input />
-          </div>  
+            <Input text={this.state.inputValue} />
+          </div>
           <div className="screen__output">
             <h2 className="screen__result--equal">=</h2>
-            <Output />
+            <Output text={this.state.outputValue} />
           </div>
         </div>
         <div className="buttons">
           <div className="buttons__left">
-            <Button  name="+" />  
-            <Button  name="-" />  
-            <Button  name="x" />  
-            <Button  name="7" />  
-            <Button  name="8" />  
-            <Button  name="9" />  
-            <Button  name="4" />  
-            <Button  name="5" />  
-            <Button  name="6" />  
-            <Button  name="1" />  
-            <Button  name="2" />  
-            <Button  name="3" />  
-            <Button  name="0" />  
-            <Button  name="." />  
-            <Button  name="DEL" />  
+            <Button typeButton="primary" name="+" />
+            <Button typeButton="primary" name="-" />
+            <Button typeButton="primary" name="x" />
+            <Button typeButton="primary" name="7" />
+            <Button typeButton="primary" name="8" />
+            <Button typeButton="primary" name="9" />
+            <Button typeButton="primary" name="4" />
+            <Button typeButton="primary" name="5" />
+            <Button typeButton="primary" name="6" />
+            <Button typeButton="primary" name="1" />
+            <Button typeButton="primary" name="2" />
+            <Button typeButton="primary" name="3" />
+            <Button typeButton="primary" name="0" />
+            <Button typeButton="primary" name="." />
+            <Button typeButton="secondary" ame="DEL" />
           </div>
           <div className="buttons__right">
-            <Button  name="/" />  
-            <Button  name="AC" />  
-            <Button  name="=" /> 
+            <Button typeButton="primary" name="/" />
+            <Button typeButton="secondary"  name="AC" />
+            <Button typeButton="equal" name="=" />
           </div>
-        </div>  
+        </div>
       </div>
     );
   }
