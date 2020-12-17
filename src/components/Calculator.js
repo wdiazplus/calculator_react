@@ -9,44 +9,61 @@ import Button from './Button';
 import Input from './Input';
 import Output from './Output';
 
+
+// Create principal component Calculator
 class Calculator extends Component {
   constructor(props) {
     super(props);
-
+    // Initial States
     this.state = { inputValue: '', outputValue: '0' };
   }
 
+  // Function that add value into input component
   addValue = (value) => {
     const { inputValue } = this.state;
-
     return () => {
-      this.setState({ inputValue: `${inputValue}${value}` });
+      this.setState({
+        inputValue: `${inputValue}${value}`,
+        outputValue: this.verifiedOperationLive(`${inputValue}${value}`),
+      });
     };
   };
 
-  clean = () => {
-    return this.setState({ inputValue: '', outputValue: '0' });
-  };
+  clean = () => this.setState({ inputValue: '', outputValue: '0' });
 
   delete = () => {
     const { inputValue } = this.state;
     return this.setState({ inputValue: `${inputValue}`.slice(0, -1) });
   };
-
+  // function that return result of the actual expression in the input
   result = () => {
     const { inputValue } = this.state;
-    if (/\/0$/.test(inputValue) === true) {
-      return this.setState({ outputValue: 'Error' });
-    }
+    // Conditional when divide by 0
+    if (/.\/0$/.test(inputValue) === true) {
+      return this.setState({outputValue: 'Error' });
+    } 
     try {
-      return this.setState({
+      return this.setState({ inputValue:'',
         outputValue: eval(`${inputValue}`).toString().slice(0, 8),
       });
     } catch (err) {
-      return this.setState({ inputValue: 'Error' });
+      return this.setState({inputValue:'Return with C',  outputValue:'Error' });
     }
   };
 
+  // function that verified input expression and return value in real time in the output component 
+  verifiedOperationLive = (expression) => {
+    if (/.*\D$/.test(expression) === true) {
+      let newExpression= expression.slice(0,-1)
+      return eval(newExpression).toString().slice(0, 8);
+    } else if (/.*\d$/.test(expression) === true) {
+      return eval(expression).toString().slice(0, 8)
+    }else if (/^\d?/.test(expression) === true){
+      return expression
+    }
+    console.log('Only number case');
+  };
+  // Structure calculator based in components
   render() {
     return (
       <div className="container">
