@@ -1,6 +1,6 @@
 # Calculator in React
 
-## App running in [Vercel](https://calculator-react-dusky.vercel.app/)
+## App running in [Netlify](https://encontacalculator.netlify.app/)
 
 ### Installation and Setup Instructions
 
@@ -8,9 +8,9 @@
 - Check in your machine, `node` and `npm` installed globally. 
 - Installation:
     `npm install` or `npm i`
-- Run test 
+- For run unit test: 
     `npm test`
-- Run in Local Server
+- Run in local Server:
     `npm start`
 
 ![Calculator](./public/Calculator.png)
